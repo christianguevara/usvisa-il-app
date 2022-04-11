@@ -11,7 +11,7 @@ from constants import Constants
 import browser_factory
 import bot_null
 import app_scheduler
-import telegram
+#import telegram
 import logging
 
 # Logging
@@ -29,7 +29,8 @@ telegram_token = environ.get('telegram_token')
 chat_id = environ.get('telegram_chat_id')
 
 if telegram_token is not None:
-    bot = telegram.Bot(token=telegram_token)
+    #bot = telegram.Bot(token=telegram_token)
+    bot = bot_null.BotNull(log)
 else:
     bot = bot_null.BotNull(log)
 
